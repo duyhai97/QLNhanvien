@@ -57,4 +57,9 @@ public class ManageNhanvien {
         return total;
     }
 
+//    public NhanVien[] addNhanvien(){
+//
+//    }
+
+
 }
