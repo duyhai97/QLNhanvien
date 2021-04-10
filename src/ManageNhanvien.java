@@ -30,6 +30,7 @@ public class ManageNhanvien {
     }
 
     public int countAverageSalaryFulltime(){
+        int dem = 0;
         int total = 0;
         int count = 0;
         int luongtrungbinh = 0;
@@ -38,11 +39,16 @@ public class ManageNhanvien {
                 NhanVienFulltime aa = (NhanVienFulltime)nhanViens[i];
                 count++;
                 total += aa.getHardsalary() + (aa.getBonusmoney() -aa.getPunishmoney());
+                luongtrungbinh = total/count;
+                if (aa.getHardsalary() + (aa.getBonusmoney() -aa.getPunishmoney()) < luongtrungbinh){
+                    dem++;
+                }
             }
-            luongtrungbinh = total/count;
+
+
 
         }
-        return luongtrungbinh;
+        return dem;
     }
 
     public int countTotalSalarypartime(){
