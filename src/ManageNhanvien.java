@@ -41,11 +41,9 @@ public class ManageNhanvien {
                 total += aa.getHardsalary() + (aa.getBonusmoney() -aa.getPunishmoney());
                 luongtrungbinh = total/count;
                 if (aa.getHardsalary() + (aa.getBonusmoney() -aa.getPunishmoney()) < luongtrungbinh){
-                    dem++;
+                        dem++;
                 }
             }
-
-
 
         }
         return dem;
@@ -63,9 +61,17 @@ public class ManageNhanvien {
         return total;
     }
 
-//    public NhanVien[] addNhanvien(){
-//
-//    }
+    public NhanVien[] addNhanvien(NhanVien[] nhanViens, NhanVien nhanVien, int index){
+        NhanVien[] nhanViens1 = new NhanVien[nhanViens.length + 1];
+        for (int i = 0; i < nhanViens.length; i++) {
+                nhanViens1[i] =nhanViens[i];
+                nhanViens1[index] = nhanVien;
+        }
+        for (int i = index + 1; i < nhanViens1.length; i++) {
+                nhanViens1[i] = nhanViens[i -1];
+        }
+        return nhanViens1;
+    }
 
 
 }
